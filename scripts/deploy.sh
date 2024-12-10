@@ -49,7 +49,7 @@ else
 fi
 
 # Install project dependencies
-npm install
+npm install --legacy-peer-deps
 
 # Check for PM2 and install if it's not available
 if command_exists pm2 ; then
