@@ -7,7 +7,7 @@ command_exists () {
 }
 
 # App directory path variable
-APP_DIR="/var/www/html"
+APP_DIR="/home/opc/ep_next_app"
 
 # Check if application directory exists, create it if not
 if [ ! -d "$APP_DIR" ]; then
