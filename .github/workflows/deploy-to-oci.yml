@@ -1,0 +1,17 @@
+name: CI to OCI VM
+on: [push]
+jobs:
+  deploy-to-oci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.OCI_SSH_PRIVATE_KEY }}
+
+      - name: Connect and Execute script
+        run: |
+          ssh -o "StrictHostKeyChecking=no" opc@129.146.114.191 "bash -s" < scripts/deploy.sh
