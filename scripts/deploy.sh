@@ -12,7 +12,7 @@ APP_DIR="/var/www/html"
 # Check if application directory exists, create it if not
 if [ ! -d "$APP_DIR" ]; then
     echo "Application directory not found. Creating directory..."
-    mkdir -p "$APP_DIR"
+    sudo mkdir -p "$APP_DIR"
 fi
 
 # Navigate to the application directory
