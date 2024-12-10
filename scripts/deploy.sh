@@ -12,7 +12,7 @@ APP_DIR="/home/opc/ep_next_app"
 # Check if application directory exists, create it if not
 if [ ! -d "$APP_DIR" ]; then
     echo "Application directory not found. Creating directory..."
-    sudo mkdir -p "$APP_DIR"
+    mkdir -p "$APP_DIR"
 fi
 
 # Navigate to the application directory
