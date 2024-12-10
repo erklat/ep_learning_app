@@ -6,8 +6,17 @@ command_exists () {
     type "$1" &> /dev/null ;
 }
 
+# App directory path variable
+APP_DIR="/var/www/html"
+
+# Check if application directory exists, create it if not
+if [ ! -d "$APP_DIR" ]; then
+    echo "Application directory not found. Creating directory..."
+    mkdir -p "$APP_DIR"
+fi
+
 # Navigate to the application directory
-cd /path/to/your/nextjs-application
+cd "$APP_DIR"
 
 # Check for npm
 if command_exists npm ; then
@@ -18,6 +27,7 @@ else
 fi
 
 # Fetch the latest code
+# Assuming the repository has been initialized; you may need to add git clone before this if needed
 git pull origin main
 
 # Install dependencies
