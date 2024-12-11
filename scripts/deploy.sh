@@ -40,7 +40,7 @@ fi
 # Check if a Git repository has been initialized
 if git rev-parse --git-dir > /dev/null 2>&1; then
     echo "Git repository is initialized."
-    git pull origin main  # Fetch the latest code
+    git pull origin master  # Fetch the latest code
 else
     echo "No Git repository found. Cloning repository..."
     git clone $GIT_REPO_URL $APP_DIR
