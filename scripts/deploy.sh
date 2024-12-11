@@ -59,6 +59,7 @@ else
     npm install -g pm2
 fi
 
+
 # Build the project
 npm run build
 
